@@ -1,4 +1,4 @@
 <?php
-header("Location: dist/"); 
+header("Location: /dist/"); 
 exit;
 ?>

@@ -20,6 +20,15 @@ body {
   &.overlay {
     -webkit-overflow-scrolling: touch;
     overflow: hidden;
+    margin-right: 20px;
+
+    @include respond-to(768) {
+      margin-right: 0;
+    }
+
+    @include respond-to(320) {
+      margin-right: 0;
+    }
   }
 
   .hidden {
@@ -37,9 +46,17 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
-    padding: 30px 130px;
     border-radius: 9px;
     z-index: 1000;
+    width: 768px;
+
+    @include respond-to(768) {
+      width: 500px;
+    }
+
+    @include respond-to(320) {
+      width: 300px;
+    }
 
     .form-close-button {
       width: 48px;
@@ -52,13 +69,34 @@ body {
       top: 0;
       right: -60px;
       cursor: pointer;
+
+      @include respond-to(320) {
+        background-image: url("../images/close320.svg");
+        width: 24px;
+        height: 24px;
+        top: 10px;
+        right: 10px;
+      }
     }
 
     .form-content {
-      width: 432px;
+      padding: 20px 130px;
+
+      @include respond-to(768) {
+        padding: 20px 80px;
+      }
+      @include respond-to(320) {
+        padding: 10px 15px;
+      }
 
       .block-title {
         margin-bottom: 35px;
+        @include respond-to(768) {
+          margin-bottom: 20px;
+        }
+        @include respond-to(320) {
+          margin-bottom: 15px;
+        }
       }
 
       form {
@@ -80,6 +118,15 @@ body {
           font-family: SFUI;
           width: 100%;
 
+          @include respond-to(768) {
+            font-size: 14px;
+          }
+
+          @include respond-to(320) {
+            font-size: 12px;
+            padding: 11px 16px;
+          }
+
           &.error {
             border: 1px solid #eb5757;
           }
@@ -89,12 +136,31 @@ body {
         button {
           height: 60px;
           margin: 10px 0;
+          @include respond-to(768) {
+            height: 40px;
+            margin: 5px 0;
+          }
+
+          @include respond-to(320) {
+            height: 50px;
+            margin: 8px 0;
+          }
         }
 
         textarea {
           resize: none;
           min-height: 116px;
           margin: 10px 0;
+
+          @include respond-to(768) {
+            min-height: 60px;
+            margin: 5px 0;
+          }
+
+          @include respond-to(320) {
+            min-height: 90px;
+            margin: 8px 0;
+          }
         }
 
         button {
@@ -106,6 +172,14 @@ body {
           font-size: 18px;
           cursor: pointer;
           transition: all 0.3s;
+
+          @include respond-to(768) {
+            font-size: 16px;
+          }
+
+          @include respond-to(320) {
+            font-size: 16px;
+          }
 
           &:hover {
             background-color: #60e1d7;
@@ -131,6 +205,10 @@ body {
           font-size: 16px;
           line-height: 26px;
           margin: 10px 0;
+          @include respond-to(320) {
+            font-size: 12px;
+            margin: 8px 0;
+          }
         }
 
         .checkbox + label::before {
@@ -143,6 +221,12 @@ body {
           background-position: center center;
           background-size: 50% 50%;
           margin-right: 10px;
+
+          @include respond-to(320) {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+          }
         }
 
         .checkbox:checked + label::before {
@@ -165,6 +249,10 @@ body {
       display: none;
       padding: 50px;
 
+      @include respond-to(320) {
+        padding: 30px;
+      }
+
       &.form-content-success {
         .form-state__wrapper-icon {
           background-image: url("../images/suc.svg");
@@ -178,8 +266,6 @@ body {
       }
 
       &__wrapper {
-        width: 442px;
-
         &-icon {
           background-position: center;
           background-repeat: no-repeat;
@@ -192,6 +278,10 @@ body {
         &-title {
           margin: 30px 0;
           text-align: center;
+
+          @include respond-to(320) {
+            margin: 20px 0;
+          }
         }
 
         &-text {
@@ -201,6 +291,12 @@ body {
           color: rgba(0, 0, 0, 0.8);
           width: 320px;
           margin: 0 auto;
+
+          @include respond-to(320) {
+            width: 100%;
+            font-size: 14px;
+            line-height: 20px;
+          }
 
           a {
             color: #4c9ee7;
@@ -215,12 +311,12 @@ body {
     right: 20px;
     bottom: 30vh;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
     display: flex;
     flex-direction: column;
 
     @include respond-to(320) {
-      bottom: 10vh;
+      bottom: 10px;
     }
 
     .button-wrapper {
@@ -291,6 +387,10 @@ body {
     margin: auto;
     display: flex;
 
+    @include respond-to(768) {
+      width: 768px;
+    }
+
     @include respond-to(320) {
       width: 320px;
       padding: 0 10px;
@@ -304,6 +404,10 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
+
+    @include respond-to(768) {
+      min-height: 400px;
+    }
 
     @include respond-to(320) {
       min-height: 500px;
@@ -322,6 +426,11 @@ body {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+
+        @include respond-to(768) {
+          width: 50%;
+          height: 400px;
+        }
 
         @include respond-to(320) {
           width: 100%;
@@ -354,6 +463,10 @@ body {
               font-weight: 700;
               font-size: 22px;
               line-height: 24px;
+
+              @include respond-to(768) {
+                font-size: 18px;
+              }
 
               @include respond-to(320) {
                 font-size: 18px;
@@ -389,7 +502,7 @@ body {
     margin: 50px 0;
 
     @include respond-to(320) {
-      height: 560px;
+      height: 560px !important;
       margin: 20px 0;
     }
 
@@ -422,6 +535,12 @@ body {
         height: 100%;
         margin: 50px 0 50px 50px;
 
+        @include respond-to(768) {
+          width: 400px;
+          height: auto;
+          margin: 20px 0 20px 20px;
+        }
+
         @include respond-to(320) {
           width: 100%;
           height: auto;
@@ -435,6 +554,12 @@ body {
           line-height: 26px;
           font-weight: 400;
           width: 370px;
+
+          @include respond-to(768) {
+            font-size: 16px;
+            line-height: 20px;
+            width: 100%;
+          }
 
           @include respond-to(320) {
             width: 100%;
@@ -560,6 +685,11 @@ body {
     letter-spacing: 1px;
     font-family: Google Sans;
 
+    @include respond-to(768) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
     @include respond-to(320) {
       font-size: 24px;
       line-height: 32px;
@@ -636,7 +766,7 @@ body {
                 overflow-y: scroll;
                 overflow-x: hidden;
                 background-color: #fff;
-                z-index: 2;
+                z-index: 1002;
                 color: #111;
                 padding: 10px;
                 transition: all 1s;
@@ -831,6 +961,10 @@ body {
     &.section-block-banner {
       height: 600px;
 
+      @include respond-to(768) {
+        height: 400px;
+      }
+
       .container {
         @include respond-to(320) {
           height: 450px;
@@ -852,6 +986,10 @@ body {
           .text-title {
             margin-bottom: 50px;
 
+            @include respond-to(768) {
+              margin-bottom: 20px;
+            }
+
             @include respond-to(320) {
               font-size: 20px;
               line-height: 24px;
@@ -865,6 +1003,11 @@ body {
           height: 100px;
           margin: 50px auto 50px 50px;
           z-index: 1;
+
+          @include respond-to(768) {
+            width: 400px;
+            margin: auto auto 20px 20px;
+          }
 
           @include respond-to(320) {
             width: 100%;
@@ -901,6 +1044,11 @@ body {
             width: 450px;
             height: 340px;
 
+            @include respond-to(768) {
+              width: 50%;
+              height: 320px;
+            }
+
             @include respond-to(320) {
               width: 100%;
               height: 240px;
@@ -921,6 +1069,10 @@ body {
               &-list {
                 width: 380px;
                 padding: 10px;
+
+                @include respond-to(768) {
+                  width: 310px;
+                }
 
                 @include respond-to(320) {
                   width: 100%;
@@ -948,6 +1100,11 @@ body {
             width: 522px;
             height: 282px;
 
+            @include respond-to(768) {
+              width: 50%;
+              height: 250px;
+            }
+
             @include respond-to(320) {
               width: 100%;
               height: 250px;
@@ -957,6 +1114,10 @@ body {
               &-list {
                 width: 470px;
                 position: relative;
+
+                @include respond-to(768) {
+                  width: 100%;
+                }
 
                 span {
                   margin-bottom: 15px;
@@ -969,11 +1130,19 @@ body {
     }
 
     &.block-3 {
+      @include respond-to(768) {
+        min-height: 500px;
+      }
+
       .container {
         flex-direction: column;
 
         .title {
           margin-bottom: 40px;
+
+          @include respond-to(768) {
+            margin-bottom: 20px;
+          }
 
           @include respond-to(320) {
             margin-bottom: 20px;
@@ -984,6 +1153,10 @@ body {
           height: 460px;
           background-color: #232b3e;
           border-radius: 16px;
+
+          @include respond-to(768) {
+            height: 400px;
+          }
 
           @include respond-to(320) {
             height: 100%;
@@ -997,6 +1170,12 @@ body {
             display: flex;
             justify-content: space-around;
 
+            @include respond-to(768) {
+              width: 100%;
+              height: 100%;
+              padding: 60px 20px;
+            }
+
             @include respond-to(320) {
               flex-direction: column;
               height: 100%;
@@ -1009,6 +1188,11 @@ body {
               height: 100%;
               display: flex;
               flex-direction: column;
+
+              @include respond-to(768) {
+                width: 25%;
+                margin: 0 10px;
+              }
 
               @include respond-to(320) {
                 width: 100%;
@@ -1061,6 +1245,12 @@ body {
                 color: #38cbb0;
                 margin-bottom: 40px;
 
+                @include respond-to(768) {
+                  font-size: 16px;
+                  line-height: 20px;
+                  margin-bottom: 20px;
+                }
+
                 @include respond-to(320) {
                   grid-area: 1 / 2 / 2 / 3;
                   margin-bottom: 0;
@@ -1071,6 +1261,11 @@ body {
 
               &__text {
                 grid-area: 2 / 2 / 3 / 3;
+
+                @include respond-to(768) {
+                  font-size: 14px;
+                  line-height: 18px;
+                }
 
                 @include respond-to(320) {
                   font-size: 14px;
@@ -1088,12 +1283,20 @@ body {
         flex-direction: column;
         margin: 100px auto;
 
+        @include respond-to(768) {
+          margin: 20px auto;
+        }
+
         @include respond-to(320) {
           margin: 20px auto;
         }
 
         .title {
           margin-bottom: 50px;
+
+          @include respond-to(768) {
+            margin-bottom: 10px;
+          }
 
           @include respond-to(320) {
             margin-bottom: 10px;
@@ -1174,6 +1377,11 @@ body {
             width: 522px;
             height: 282px;
 
+            @include respond-to(768) {
+              width: 50%;
+              height: 220px;
+            }
+
             @include respond-to(320) {
               width: 100%;
               height: 200px;
@@ -1183,6 +1391,10 @@ body {
               &-list {
                 width: 470px;
                 position: relative;
+
+                @include respond-to(768) {
+                  width: 100%;
+                }
 
                 span {
                   margin-bottom: 15px;
@@ -1208,6 +1420,11 @@ body {
           &__text {
             width: 460px;
             height: 415px;
+
+            @include respond-to(768) {
+              width: 50%;
+              height: 300px;
+            }
 
             @include respond-to(320) {
               width: 100%;
@@ -1276,6 +1493,10 @@ body {
     &.block-7 {
       height: 460px;
 
+      @include respond-to(768) {
+        height: 300px;
+      }
+
       .container {
         .image {
           background-image: url("../images/Group\ 22579.png");
@@ -1286,12 +1507,19 @@ body {
         }
 
         .text-wrapper {
+          @include respond-to(768) {
+            height: 100%;
+          }
+
           @include respond-to(320) {
             font-size: 14px;
           }
 
           .text-subtitle {
             margin-top: auto;
+            @include respond-to(768) {
+              margin-top: 0;
+            }
           }
 
           .line {
@@ -1308,6 +1536,9 @@ body {
 
           .link {
             margin-top: auto;
+            @include respond-to(320) {
+              margin-top: 0;
+            }
 
             .link-items {
               .link-item {

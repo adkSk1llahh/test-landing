@@ -2,10 +2,12 @@ $(document).ready(function () {
 
     $('#button-question').click(function () {
         $('.modal-form').toggleClass('visible');
+        $('body').toggleClass('overlay');
     });
 
     $('.form-close-button').click(function () {
         $('.modal-form').toggleClass('visible');
+        $('body').toggleClass('overlay');
     });
 
 
@@ -37,7 +39,7 @@ $(document).ready(function () {
 
         submitHandler: function(form) {
             $.ajax({
-                url: 'https://enca877xn1qkmz6.m.pipedream.net',
+                url: 'https://enca877xn1qkmz6.m.pipedream.net', //исправить здесь
                 type: 'POST',
                 dataType: 'json',
                 success: function () {

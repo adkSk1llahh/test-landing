@@ -51,7 +51,6 @@ $(document).ready(function () {
                     $('.form-content-error').addClass('visible');
                 }
             });
-            console.log
         }
     });
 
